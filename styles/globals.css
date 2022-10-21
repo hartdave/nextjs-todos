@@ -5,10 +5,14 @@
 
 html,
 body {
+  position: relative;
+  height: 100vh;
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  display: flex;
+  justify-content: center;
 }
 
 a {
@@ -20,6 +24,57 @@ a {
   box-sizing: border-box;
 }
 
+.container{
+  display: flex;
+  flex-direction: column;
+  margin-top: 3em;
+}
+.container h1{
+  align-self: center;
+}
+
+.container .todo-form{
+  margin-top: 2em;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.container .todo-form .todo-input{
+  width: 85%;
+}
+.container .todo-form .add-button{
+  width: 15%;
+  background-color:darkred;
+}
+.container .todo-items{
+  margin-top: 2em;
+  width: 100%;
+}
+.container .todo-items h2{
+  width: 100%;
+  margin-bottom: 1em;
+}
+.container .todo-items .item{
+  display:flex;
+  justify-content: space-between;
+}
+.container .todo-items .item .item-button-group .edit-button:hover{
+  color:aqua;
+  text-decoration: underline;
+}
+.container .todo-items .item .item-button-group .delete-button:hover{
+  color: darkred;
+  text-decoration: underline;
+}
+.footer-container{
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
