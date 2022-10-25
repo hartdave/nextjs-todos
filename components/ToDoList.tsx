@@ -1,45 +1,5 @@
 import * as React from 'react';
 
-if (typeof window !== 'undefined') {
-const todoForm = document.getElementById('todo-form');
-const todoInput = document.getElementById('todo-input');
-const todoSubmit = document.getElementById('todo-submit');
-const todoList = document.getElementById('todo-list');
-
-const deleteItem = (btn) => {
-    let elem = btn.parentNode;
-    const index = [...elem.parentElement.children].indexOf(elem);
-    todoStorage.splice(index, 1);
-    localStorage.setItem('todoList', JSON.stringify(todoStorage));
-    elem.remove();
-};
-
-const buildList = (text) => {
-    const listItem = document.createElement('li');
-    listItem.innerHTML = 
-        `<div className='item-description'>` +
-            text +
-        '</div><div className="item-button-group"><button className="edit-button">Edit</button> | <button onclick="deleteItem(this)">Delete</button></div>';
-    todoList.appendChild(listItem)
-};
-
-let todoStorage = localStorage.getItem('todo-item')
-    ? JSON.parse(localStorage.getItem('todo-item')): [];
-
-todoForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    todoStorage.push(todoInput.value);
-    localStorage.setItem('todo-item', JSON.stringify(todoStorage));
-    buildList(todoInput.value);
-    todoInput.value = "";
-});
-
-
-};
-
-
-
-
 
 
 export function ToDoList () {
