@@ -1,4 +1,5 @@
 import * as React from 'react';
+import {FaEdit, FaTrash} from 'react-icons/fa';
 
 
 
@@ -20,7 +21,7 @@ export function ToDoList () {
                         Test item
                     </div>
                     <div className='item-button-group'>
-                        <button className="edit-button">Edit</button> | <button className='delete-button'>Delete</button>
+                        <button className="edit-button"><FaEdit /></button> | <button className='delete-button'><FaTrash /></button>
                     </div>
                 </li>
             </ul>

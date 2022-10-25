@@ -27,7 +27,8 @@ a {
 .container{
   display: flex;
   flex-direction: column;
-  margin-top: 3em;
+  margin-top: 2rem;
+  padding: 2rem;
   text-align: center;
 }
 .container h1{
@@ -71,9 +72,11 @@ a {
 .container .todo-items .item-description{
   background: none;
 }
-.container .todo-items button:hover{
-  color:aqua;
-  text-decoration: underline;
+.container .todo-items .edit-button:hover{
+  color:greenyellow;
+}
+.container .todo-items .delete-button:hover{
+  color:darkred;
 }
 
 .footer-container{
