@@ -59,26 +59,23 @@ a {
 .container .todo-items ul, li{
   padding-left: 1px;
 }
-.container .todo-items .item{
+.container .todo-items li{
   display:flex;
   justify-content: space-between;
   width: 100%;
 }
-.container .todo-items .item .item-button-group button{
+.container .todo-items  button{
   background: none;
   border: none;
 }
-.container .todo-items .item .item-description{
+.container .todo-items .item-description{
   background: none;
 }
-.container .todo-items .item .item-button-group .edit-button:hover{
+.container .todo-items button:hover{
   color:aqua;
   text-decoration: underline;
 }
-.container .todo-items .item .item-button-group .delete-button:hover{
-  color: darkred;
-  text-decoration: underline;
-}
+
 .footer-container{
   position: absolute;
   bottom: 0;
