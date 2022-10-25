@@ -89,8 +89,14 @@ a {
   width: 100%;
 }
 .footer-container .date-footer{
-  font-size: 0.80rem;
+  font-size: 0.75rem;
   margin-top: 1rem;
+  text-align: center;
+}
+.footer-container .people-footer{
+  font-size: 1.25rem;
+  margin-top: 1rem;
+  text-align: center;
 }
 .universal-footer{
   margin: 1rem;

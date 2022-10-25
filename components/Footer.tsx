@@ -5,14 +5,15 @@ import { PageProps } from '../pages/[[...slug]]';
 
     
 
-export function Footer ({renderDate}: PageProps) {
+export function Footer ({renderDate, person}: PageProps) {
 
 
     return (
     <>
     <footer className='footer-container'>
         <div className='people-footer'>
-            Person:
+            Person:<br /> 
+            {person}
         </div>
         <div className="date-footer">
             Rendered at: {renderDate}
