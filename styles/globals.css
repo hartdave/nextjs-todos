@@ -28,9 +28,11 @@ a {
   display: flex;
   flex-direction: column;
   margin-top: 3em;
+  text-align: center;
 }
 .container h1{
   align-self: center;
+ 
 }
 
 .container .todo-form{
@@ -54,9 +56,20 @@ a {
   width: 100%;
   margin-bottom: 1em;
 }
+.container .todo-items ul, li{
+  padding-left: 1px;
+}
 .container .todo-items .item{
   display:flex;
   justify-content: space-between;
+  width: 100%;
+}
+.container .todo-items .item .item-button-group button{
+  background: none;
+  border: none;
+}
+.container .todo-items .item .item-description{
+  background: none;
 }
 .container .todo-items .item .item-button-group .edit-button:hover{
   color:aqua;
@@ -74,6 +87,20 @@ a {
   align-items: center;
   justify-content: center;
   width: 100%;
+}
+.footer-container .date-footer{
+  font-size: 0.80rem;
+  margin-top: 1rem;
+}
+.universal-footer{
+  margin: 1rem;
+}
+.universal-footer a{
+  text-decoration: underline;
+}
+.universal-footer a:hover{
+  text-decoration: underline;
+  color: aqua;
 }
 @media (prefers-color-scheme: dark) {
   html {
