@@ -55,7 +55,6 @@ export const List = () => {
                                 </form>:
                                 <div>{todo.todo}</div>
                             }
-
                         </div>
                         <div>
                             <button className='edit-button'onClick={() => changeEditing(todo.id)}><FaEdit /></button> | <button className='delete-button' onClick={() => deleteTodo(todo.id)}><FaTrash /></button>
@@ -63,10 +62,6 @@ export const List = () => {
                     </li>
                 )
             })}
-                
-
-                
-            
         </>
     )
 };

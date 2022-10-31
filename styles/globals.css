@@ -33,7 +33,7 @@ a {
 }
 .container h1{
   align-self: center;
- 
+  font-size: 2.25rem;
 }
 
 .container .todo-form{
@@ -44,6 +44,7 @@ a {
 }
 .container .todo-form .todo-input{
   width: 85%;
+  height: 2rem;
 }
 .container .todo-form .add-button{
   width: 15%;
@@ -56,6 +57,7 @@ a {
 .container .todo-items h2{
   width: 100%;
   margin-bottom: 1em;
+  font-size: 1.75rem;
 }
 .container .todo-items ul, li{
   padding-left: 1px;
@@ -64,6 +66,8 @@ a {
   display:flex;
   justify-content: space-between;
   width: 100%;
+  padding-top: 0.25rem;
+  font-size: 1.25rem;
 }
 .container .todo-items  button{
   background: none;

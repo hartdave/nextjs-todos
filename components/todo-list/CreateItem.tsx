@@ -7,19 +7,19 @@ export const Form = () => {
         id: "",
         todo: "",
     }
-    const [formData, setFormData] = useState(initialState);
+    const [createData, setCreateData] = useState(initialState);
     
     const createToDo = () => {
-        if (formData  === initialState) {
+        if (createData  === initialState) {
             return alert("Please Enter a To Do Item");
         } else {
-            formData.id = new Date().toUTCString();
+            createData.id = new Date().toUTCString();
             let newLocal = window.localStorage.getItem("ToDos");
             let newArray = JSON.parse(newLocal);
             if (newArray == null) {
-                dataArray.push(formData);
+                dataArray.push(createData);
             } else {
-            dataArray.push(...newArray, formData);
+            dataArray.push(...newArray, createData);
             };
             window.localStorage.setItem("ToDos", JSON.stringify(dataArray));
             
@@ -29,7 +29,7 @@ export const Form = () => {
     return (
         
         <form className='todo-form' id="todo-form" onSubmit={createToDo}>
-            <input type="text" className="todo-input" placeholder='Add a to do item' onChange={(e) => setFormData({ ...formData, todo: e.target.value })} value={formData.todo} />
+            <input type="text" className="todo-input" placeholder='Add a to do item' onChange={(e) => setCreateData({ ...createData, todo: e.target.value })} value={createData.todo} />
             <button type="submit" className='add-button' id="todo-submit">Add</button>
         </form>
     );

@@ -7,9 +7,10 @@ const swapiEndPoint = 'https://swapi.dev/api/people/';
 export async function getServerSideProps() {
   const res = await fetch(swapiEndPoint);
   const data = await res.json();
-  const random = await Math.floor(Math.random()*data.results.length)-1;
-  const personData: {name: string} = await data.results[random];
-  const person = await personData.name;
+  
+  const random =  Math.floor(Math.random()*data.results.length)-1;
+  const personData: {name: string} = data.results[random];
+  const person = personData.name;
   
   return {
     props: {
@@ -37,7 +38,7 @@ export default function Home({ renderDate, person }: PageProps) {
       </Head>
       
       <main>
-        
+      
         <ToDoList />
         
       </main>
