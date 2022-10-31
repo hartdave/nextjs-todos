@@ -2,15 +2,12 @@ import Head from 'next/head'
 import { Footer } from '../components/Footer'
 import { ToDoList } from '../components/todo-list/ToDoList'
 
-const swapiEndPoint = 'https://swapi.dev/api/people/';
+const peopleApi = '/api/swapi';
 
 export async function getServerSideProps() {
-  const res = await fetch(swapiEndPoint);
+  const res = await fetch("https://nextjs-todos-dhart.netlify.app/api/swapi");
   const data = await res.json();
-  
-  const random =  Math.floor(Math.random()*data.results.length)-1;
-  const personData: {name: string} = data.results[random];
-  const person = personData.name;
+  const person = data.name;
   
   return {
     props: {
@@ -38,11 +35,8 @@ export default function Home({ renderDate, person }: PageProps) {
       </Head>
       
       <main>
-      
         <ToDoList />
-        
       </main>
-
  <Footer renderDate={renderDate} person={person} />
     </>
   )
