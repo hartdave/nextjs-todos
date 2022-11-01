@@ -29,8 +29,10 @@ export const Form = () => {
     return (
         
         <form className='todo-form' id="todo-form" onSubmit={createToDo}>
-            <input type="text" className="todo-input" placeholder='Add a to do item' onChange={(e) => setCreateData({ ...createData, todo: e.target.value })} value={createData.todo} />
-            <button type="submit" className='add-button' id="todo-submit">Add</button>
+            <div className='flex flex-row justify-between border-b border-green-500 px-1 py-2'>
+            <input type="text" className="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 focus:outline-none" placeholder='Add a to do item' onChange={(e) => setCreateData({ ...createData, todo: e.target.value })} value={createData.todo} />
+            <button type="submit" className='flex-shrink-0 bg-green-500 hover:bg-green-700 border-green-500 hover:border-green-700 text-sm border-4 text-white py-1 px-2 rounded' id="todo-submit">Add</button>
+            </div>
         </form>
     );
 };

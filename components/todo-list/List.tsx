@@ -8,6 +8,7 @@ export const List = () => {
     const [ editing, setEditing] = useState("");
     const [ editData, setEditData] = useState({todo: ""})
 
+
     useEffect(() => {
         const listData: Array<object> = JSON.parse(localStorage.getItem('ToDos'));
       
@@ -46,19 +47,27 @@ export const List = () => {
         <>  
             {todos.map((todo) => {
                 return (
-                    <li key={todo.id}>
-                        <div>
+                    <li key={todo.id} className="mt-2">
+                        
                             {editing === todo.id ? 
-                                 <form onSubmit={() => updateTodo(editData.todo, todo.id)} id={todo.id}>
-                                    <input type="text" className="todo-input" placeholder="" onChange={(e) => setEditData({ ...todo.todo, todo: e.target.value })} value={editData.todo} />
-                                    <button type='submit'className='edit-button'>Submit</button>
-                                </form>:
-                                <div>{todo.todo}</div>
+                              
+                                 <form onSubmit={() => updateTodo(editData.todo, todo.id)}>
+                                    <div className='flex flex-row justify-between border border-green-600'>
+                                    <input type="text" className="appearance-none block  border-none w-full text-gray-700 pb-1 focus:outline-none mr-5" placeholder={todo.todo} onChange={(e) => setEditData({ ...todo.todo, todo: e.target.value })} value={editData.todo} id={todo.id} />
+                                    <button type='submit'className=' hover:text-green-600'><FaEdit /></button>
+                                    </div>
+                                </form>
+                              
+                            :
+                            <div className='flex flex-row justify-between'>
+                              <div className='text-lg'>{todo.todo}</div>
+                              <div>
+                              <button className='hover:text-red-600' onClick={() => deleteTodo(todo.id)}><FaTrash /></button> | <button className='hover:text-green-600'onClick={() => changeEditing(todo.id)}><FaEdit /></button>
+                              </div>
+                            </div>
                             }
-                        </div>
-                        <div>
-                            <button className='edit-button'onClick={() => changeEditing(todo.id)}><FaEdit /></button> | <button className='delete-button' onClick={() => deleteTodo(todo.id)}><FaTrash /></button>
-                        </div>
+                        
+                        
                     </li>
                 )
             })}

@@ -1,19 +1,15 @@
-
 export function Footer ({renderDate, person}: PageProps) {
-
-
     return (
     <>
-    <footer className='footer-container'>
-        <div className='people-footer'>
-            Person:<br /> 
-            {person}
+    <footer className='flex flex-col items-center'>
+        <div className='text-lg m-1'>
+            Person: {person}
         </div>
-        <div className="date-footer">
+        <div className="text-sm m-1">
             Rendered at: {renderDate}
         </div>
-        <div className='universal-footer'>
-            Powered by <a href="https://nextjs.org/">Next.js</a>
+        <div className='text-xs m-1'>
+            Powered by <a href="https://nextjs.org/" className="text-blue-600 underline hover:text-red-500">Next.js</a>
         </div>
     </footer>
     </>

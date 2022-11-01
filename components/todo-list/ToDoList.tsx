@@ -5,12 +5,12 @@ import {Form, List} from '../'
 export function ToDoList () {
   
   return (
-    <div className='container'>
-        <h1 className="text-3xl font-bold">
-        Welcome to the to do app
+    <div className='flex flex-col'>
+        <h1 className="text-3xl font-bold mt-3 mb-3">
+        Welcome to the To Do app
         </h1>
         <Form />
-        <div className='todo-items'>
+        <div className='mt-3'>
             <h2 className="text-2xl font-bold">To Do List:</h2>
             <ul>
                 <List />

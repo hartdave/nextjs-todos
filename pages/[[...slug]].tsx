@@ -24,10 +24,10 @@ export default function Home({ renderDate, person }: PageProps) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       
-      <main>
+      <main className='flex flex-col justify-between items-center h-screen'>
         <ToDoList />
+        <Footer renderDate={renderDate} person={person} />
       </main>
- <Footer renderDate={renderDate} person={person} />
     </>
   )
 }
