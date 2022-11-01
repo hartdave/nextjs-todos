@@ -1,9 +1,9 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
-export const dataArray = [];
+export const dataArray: Array<object> = [];
 export const Form = () => {
     
-    const initialState = {
+    const initialState: {id: string, todo: string} = {
         id: "",
         todo: "",
     }
@@ -14,8 +14,8 @@ export const Form = () => {
             return alert("Please Enter a To Do Item");
         } else {
             createData.id = new Date().toUTCString();
-            let newLocal = window.localStorage.getItem("ToDos");
-            let newArray = JSON.parse(newLocal);
+            let newLocal: string = window.localStorage.getItem("ToDos");
+            let newArray: Array<object> = JSON.parse(newLocal);
             if (newArray == null) {
                 dataArray.push(createData);
             } else {

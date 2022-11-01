@@ -1,7 +1,4 @@
-import * as React from 'react';
-import { useState } from 'react';
-import { Form } from './CreateItem';
-import { List } from './List';
+import {Form, List} from '../'
 
 
 

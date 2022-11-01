@@ -9,7 +9,7 @@ export const List = () => {
     const [ editData, setEditData] = useState({todo: ""})
 
     useEffect(() => {
-        const listData = JSON.parse(localStorage.getItem('ToDos'));
+        const listData: Array<object> = JSON.parse(localStorage.getItem('ToDos'));
       
         if (listData !== null) {
           setTodos(listData);
@@ -17,16 +17,16 @@ export const List = () => {
       }, []);
     
       const deleteTodo = (id: string) => {
-        const remainingTodos = todos.filter(todo => id !== todo.id);
+        const remainingTodos: Array<string> = todos.filter(todo => id !== todo.id);
         setTodos(remainingTodos);
         updateLocalStorage(remainingTodos);
       }
 
-      const changeEditing = (id) => {
+      const changeEditing = (id: string) => {
         setEditing(() => id);
         };
 
-      const updateTodo = (val, id) => {
+      const updateTodo = (val: string, id: string) => {
         const index = todos.findIndex(object => {
             return object.id === id;
         });
@@ -38,7 +38,7 @@ export const List = () => {
         }
       }
       
-      const updateLocalStorage = (todoList) => {
+      const updateLocalStorage = (todoList: Array<string>) => {
         localStorage.setItem('ToDos', JSON.stringify(todoList));
       };
 

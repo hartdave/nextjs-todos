@@ -1,8 +1,5 @@
 import Head from 'next/head'
-import { Footer } from '../components/Footer'
-import { ToDoList } from '../components/todo-list/ToDoList'
-
-const peopleApi = '/api/swapi';
+import { Footer, ToDoList } from '../components/'
 
 export async function getServerSideProps() {
   const res = await fetch("https://nextjs-todos-dhart.netlify.app/api/swapi");
@@ -15,13 +12,6 @@ export async function getServerSideProps() {
       person,
     }, 
   }
-}
-
-
-
-export interface PageProps {
-  renderDate: string,
-  person: string,
 }
 
 export default function Home({ renderDate, person }: PageProps) {

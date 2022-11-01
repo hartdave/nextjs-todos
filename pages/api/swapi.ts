@@ -1,4 +1,3 @@
-
 export default async function handler(req, res) {
     const swapiEndPoint = 'https://swapi.dev/api/people/';
     const result = await fetch(swapiEndPoint);

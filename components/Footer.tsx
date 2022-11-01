@@ -1,8 +1,3 @@
-import * as React from 'react';
-import { PageProps } from '../pages/[[...slug]]';
-
-
-    
 
 export function Footer ({renderDate, person}: PageProps) {
 
