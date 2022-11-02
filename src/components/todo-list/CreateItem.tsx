@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 export const dataArray: Array<object> = [];
-export const Form = () => {
+export const CreateItem = () => {
   const initialState: { id: string; todo: string } = {
     id: "",
     todo: "",
