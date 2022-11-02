@@ -1,11 +1,7 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": false,
@@ -18,16 +14,16 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
-    "typeRoots": [
-      "./types"
-    ]
+    "typeRoots": ["./types"]
   },
   "include": [
     "next-env.d.ts",
     "**/*.ts",
-    "**/*.tsx"
-, "next.config.js", "context/context.js", "postcss.config.js", "tailwind.config.js"  ],
-  "exclude": [
-    "node_modules"
-  ]
+    "**/*.tsx",
+    "next.config.js",
+    "context/context.js",
+    "postcss.config.js",
+    "tailwind.config.js"
+  ],
+  "exclude": ["node_modules"]
 }
