@@ -1,4 +1,4 @@
-import { useEffect, useState, DOMAttributes, useContext } from "react";
+import { useState, DOMAttributes } from "react";
 import { ToDoItem } from "../../types/main";
 import { useToDos } from "./todo-context";
 
@@ -8,13 +8,13 @@ export const CreateItem = () => {
 
   const createToDo: DOMAttributes<HTMLFormElement>["onSubmit"] = (e) => {
     e.preventDefault();
-
     const id = new Date().toUTCString();
     const newItem: ToDoItem = {
       id: id,
       todo: value,
     };
     pushToDo(newItem);
+    setValue("");
   };
 
   return (

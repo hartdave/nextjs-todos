@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext } from "react";
+import { useState } from "react";
 import { FaEdit, FaTrash } from "react-icons/fa";
 import { useToDos } from "./todo-context";
 
@@ -32,7 +32,7 @@ export const List = () => {
             className='mt-2'
           >
             {editing === todo.id ? (
-              <form onSubmit={() => updateTodo(editData.todo, todo.id)}>
+              <form onSubmit={() => updateTodo(todo.todo, todo.id)}>
                 <div className='flex flex-row justify-between border border-green-600'>
                   <input
                     type='text'
