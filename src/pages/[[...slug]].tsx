@@ -1,21 +1,23 @@
+import { GetServerSideProps } from "next";
 import Head from "next/head";
-import { Footer } from "../components/Footer";
+import { Footer, FooterProps } from "../components/Footer";
 import { ToDoList } from "../components/todo-list/ToDoList";
 
-export async function getServerSideProps() {
-  const res = await fetch("https://nextjs-todos-dhart.netlify.app/api/swapi");
-  const data = await res.json();
-  const person = data.name;
-
-  return {
-    props: {
-      renderDate: new Date().toTimeString(),
-      person,
-    },
-  };
+export interface PageProps {
+  footer: FooterProps;
 }
 
-export default function Home({ renderDate, person }: PageProps) {
+export const getServerSideProps: GetServerSideProps<PageProps> = async () => {
+  return {
+    props: {
+      footer: {
+        renderDate: new Date().toTimeString(),
+      },
+    },
+  };
+};
+
+export default function Home({ footer }: PageProps) {
   return (
     <>
       <Head>
@@ -32,10 +34,7 @@ export default function Home({ renderDate, person }: PageProps) {
 
       <main className='flex flex-col justify-between items-center h-screen'>
         <ToDoList />
-        <Footer
-          renderDate={renderDate}
-          person={person}
-        />
+        <Footer {...footer} />
       </main>
     </>
   );

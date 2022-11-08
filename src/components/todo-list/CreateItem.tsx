@@ -1,27 +1,20 @@
-import { useState } from "react";
+import { useEffect, useState, DOMAttributes, useContext } from "react";
+import { ToDoItem } from "../../types/main";
+import { useToDos } from "./todo-context";
 
-export const dataArray: Array<object> = [];
 export const CreateItem = () => {
-  const initialState: { id: string; todo: string } = {
-    id: "",
-    todo: "",
-  };
-  const [createData, setCreateData] = useState(initialState);
+  const [value, setValue] = useState<string>();
+  const { todos, pushToDo } = useToDos();
 
-  const createToDo = () => {
-    if (createData === initialState) {
-      return alert("Please Enter a To Do Item");
-    } else {
-      createData.id = new Date().toUTCString();
-      let newLocal: string = window.localStorage.getItem("ToDos");
-      let newArray: Array<object> = JSON.parse(newLocal);
-      if (newArray == null) {
-        dataArray.push(createData);
-      } else {
-        dataArray.push(...newArray, createData);
-      }
-      window.localStorage.setItem("ToDos", JSON.stringify(dataArray));
-    }
+  const createToDo: DOMAttributes<HTMLFormElement>["onSubmit"] = (e) => {
+    e.preventDefault();
+
+    const id = new Date().toUTCString();
+    const newItem: ToDoItem = {
+      id: id,
+      todo: value,
+    };
+    pushToDo(newItem);
   };
 
   return (
@@ -35,10 +28,8 @@ export const CreateItem = () => {
           type='text'
           className='appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 focus:outline-none'
           placeholder='Add a to do item'
-          onChange={(e) =>
-            setCreateData({ ...createData, todo: e.target.value })
-          }
-          value={createData.todo}
+          onChange={(e) => setValue(e.target.value)}
+          value={value}
         />
         <button
           type='submit'
