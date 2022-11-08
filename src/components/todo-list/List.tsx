@@ -39,7 +39,7 @@ export const List = () => {
                     className='appearance-none block  border-none w-full text-gray-700 pb-1 focus:outline-none mr-5'
                     placeholder={todo.todo}
                     onChange={(e) =>
-                      setEditData({ ...todo.todo, todo: e.target.value })
+                      setEditData({ ...todo, todo: e.target.value })
                     }
                     value={editData.todo}
                     id={todo.id}

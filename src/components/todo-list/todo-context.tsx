@@ -45,8 +45,6 @@ export function ToDosContextProvider({ children }: PropsWithChildren) {
     let localList = JSON.parse(window.localStorage.getItem("ToDos"));
     if (localList) {
       setToDos(localList);
-      console.log(localList);
-      console.log(todos);
     }
   }, []);
 
